@@ -1,7 +1,7 @@
 <?php
 include ("class.db.php");
 
-class Generator {
+class CodeGenerator {
 
     var $db, $zip;
 
@@ -658,6 +658,6 @@ class Generator {
 		 $this->zip->addFile("$dir/$foldername/del.png", "$foldername/del.png");
 		 $this->zip->addFile("$dir/$foldername/edit.png", "$foldername/edit.png");
 	}
-} /* Generator */
+} /* CodeGenerator */
 
 ?>
