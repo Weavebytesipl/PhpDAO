@@ -12,6 +12,7 @@ class CodeGenerator {
             <center>
             <form action=\"index.php\" method=\"post\"
             enctype=\"multipart/form-data\">
+            Db Name: <input type='text' name='dbname'>
             <label for=\"file\">Filename:</label>
             <input type=\"file\" name=\"file\" id=\"file\" />
             <br />
@@ -50,12 +51,14 @@ class CodeGenerator {
 
         /* make dynamic name for directory */
         $date = new DateTime();
-        $dir = "wb_generate_" . $date->getTimestamp();
-        mkdir($dir);
+        //$dir = "wb_generate_" . $date->getTimestamp();
 
-        $sqlfile = "$dir.sql";
+        //$sqlfile = "$dir.sql";
         /* upload sql */
-        $this->uploadSql($sqlfile);
+        //$this->uploadSql($sqlfile);
+        //
+        $dir = $_POST["dbname"];
+        //mkdir($dir);
 
         $this->db = new Db($dir, $sqlfile);
         $tables = $this->db->get_tables();

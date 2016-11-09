@@ -13,9 +13,11 @@ class Db{
             die('Could not connect: ' . mysql_error());
         }
 
-        if(!$this->mysql_install_db($dbname, $sqlfile, $errmsg)) { 
-            die( "failure: ".$errmsg."<br/>".mysql_error() );
-        }
+        $result = mysql_select_db($dbname);
+
+        //if(!$this->mysql_install_db($dbname, $sqlfile, $errmsg)) { 
+            //die( "failure: ".$errmsg."<br/>".mysql_error() );
+        //}
     }
 
     /*
